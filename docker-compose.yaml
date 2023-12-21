@@ -1,0 +1,71 @@
+version: '3'
+services:
+  myapp1:
+    build: .
+    ports:
+      - '3001:3000'
+    volumes:
+      - '/app/node_modules'
+      - '.:/app'
+    working_dir: /app
+    command: ["node", "server"]
+
+  myapp2:
+    build: .
+    ports:
+      - '3002:3000'
+    volumes:
+      - '/app/node_modules'
+      - '.:/app'
+    working_dir: /app
+    command: ["node", "server"]
+
+  myapp3:
+    build: .
+    ports:
+      - '3003:3000'
+    volumes:
+      - '/app/node_modules'
+      - '.:/app'
+    working_dir: /app
+    command: ["node", "server"]
+
+  myapp4:
+    build: .
+    ports:
+      - '3004:3000'
+    volumes:
+      - '/app/node_modules'
+      - '.:/app'
+    working_dir: /app
+    command: ["node", "server"]
+
+  myapp5:
+    build: .
+    ports:
+      - '3005:3000'
+    volumes:
+      - '/app/node_modules'
+      - '.:/app'
+    working_dir: /app
+    command: ["node", "server"]
+
+  myapp6:
+    build: .
+    ports:
+      - '3006:3000'
+    volumes:
+      - '/app/node_modules'
+      - '.:/app'
+    working_dir: /app
+    command: ["node", "server"]
+
+  myapp7:
+    build: .
+    ports:
+      - '3007:3000'
+    volumes:
+      - '/app/node_modules'
+      - '.:/app'
+    working_dir: /app
+    command: ["node", "server"]
