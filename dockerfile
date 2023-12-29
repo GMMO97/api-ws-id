@@ -7,12 +7,6 @@ WORKDIR /app
 # Copiar los archivos del paquete.json y el paquete-lock.json
 COPY package*.json ./
 
-# Instalar las dependencias
-RUN npm install
-
-# Copiar el resto de los archivos de la aplicación
-COPY . .
-
 # Instalar dependencias adicionales
 RUN apt-get update && \
     apt-get install -y gconf-service libgbm-dev libasound2 libatk1.0-0 libc6 libcairo2 libcups2 libdbus-1-3 \
@@ -21,7 +15,11 @@ RUN apt-get update && \
                        libxcomposite1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6 libxrandr2 libxrender1 \
                        libxss1 libxtst6 ca-certificates fonts-liberation libappindicator1 libnss3 lsb-release \
                        xdg-utils wget
+# Instalar las dependencias
+RUN npm install
 
+# Copiar el resto de los archivos de la aplicación
+COPY . .
 # Exponer el puerto que usa la aplicación
 EXPOSE 3000
 
